@@ -1,7 +1,8 @@
-package cl.ucn.adhoc;
+package cl.ucn.repositorio;
+
+import cl.ucn.dominio.Tarea;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface RepositorioTarea {
 
@@ -9,5 +10,6 @@ public interface RepositorioTarea {
     List<Tarea> encontrarTodas();
     List<Tarea> encontrarCompletas(boolean status);
     void eliminar(Long id);
+    Tarea encontrarPorId(Long id); // ← nuevo método
 
 }
