@@ -10,8 +10,5 @@ INSERT INTO tarea (titulo, descripcion, fecha_vencimiento, completada) VALUES ('
 INSERT INTO tarea (titulo, descripcion, fecha_vencimiento, completada) VALUES ('Resolver ejercicios', 'Ejercicios del capítulo 1', '2025-06-21 00:00:00.000', 0);
 INSERT INTO tarea (titulo, descripcion, fecha_vencimiento, completada) VALUES ('Preparar presentación', 'Exponer en clase de software', '2025-06-25 00:00:00.000', 1);
 INSERT INTO tarea (titulo, descripcion, fecha_vencimiento, completada) VALUES ('Revisar apuntes', 'Apuntes de cálculo diferencial', NULL, 0);
-<<<<<<< HEAD
 INSERT INTO tarea (titulo, descripcion, fecha_vencimiento, completada) VALUES ('Enviar resumen', 'Resumen para revisión de pares', '2025-06-22 00:00:00.000', 1);
-=======
 INSERT INTO tarea (titulo, descripcion, fecha_vencimiento, completada) VALUES ('Enviar resumen', 'Resumen para revisión de pares', '2025-06-22 00:00:00.000', 1);
->>>>>>> 184029c (fixed some problems)
