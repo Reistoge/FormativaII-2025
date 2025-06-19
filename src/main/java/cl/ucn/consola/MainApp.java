@@ -81,7 +81,7 @@ public class MainApp {
                 case 5:
                     System.out.print("Ingrese el ID de la tarea a eliminar: ");
                     Long idEliminar = Long.parseLong(scanner.nextLine());
-                    servicio.deleteTask(idEliminar);
+                    servicio.borrarTarea(idEliminar);
                     System.out.println("Tarea eliminada.");
                     break;
 

@@ -42,7 +42,11 @@ public class ServicioTarea {
         repo.guardar(tarea);
     }
 
-    public void deleteTask(Long id) {
+    public void borrarTarea(Long id) {
         repo.eliminar(id);
+    }
+
+    public Tarea buscarTareaPorId(Long id) {
+        return repo.encontrarPorId(id);
     }
 }
