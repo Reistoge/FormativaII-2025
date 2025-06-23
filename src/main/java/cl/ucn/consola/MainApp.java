@@ -1,6 +1,9 @@
-package cl.ucn.adhoc;
+package cl.ucn.consola;
 
-import io.vertx.core.net.impl.pool.Task;
+import cl.ucn.repositorio.RepositorioTarea;
+import cl.ucn.repositorio.RepositorioTareaImpl;
+import cl.ucn.servicio.ServicioTarea;
+import cl.ucn.dominio.Tarea;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
@@ -13,8 +16,9 @@ public class MainApp {
         RepositorioTarea repo = new RepositorioTareaImpl(emf.createEntityManager());
         ServicioTarea servicio = new ServicioTarea(repo);
 
-        servicio.crearTarea("Preparar presentación", "Exponer capítulo 3", LocalDate.now().plusDays(2));
-        List<Tarea> tareas = servicio.obtenerTareasPendientes();
-        tareas.forEach(System.out::println);
+//        servicio.crearTarea("B ", "Desc B", LocalDate.now().plusDays(5));
+//        List<Tarea> tareas = servicio.obtenerTareasPendientes();
+//        tareas.forEach(System.out::println);
+
     }
 }
