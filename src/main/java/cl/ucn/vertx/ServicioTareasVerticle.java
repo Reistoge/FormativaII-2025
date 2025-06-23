@@ -15,8 +15,6 @@ public class ServicioTareasVerticle extends AbstractVerticle {
         // Aquí puedes implementar la lógica de inicio del servicio de tareas.
         System.out.println("ServicioTareasVerticle ha iniciado.");
 
-
-
         vertx.eventBus().consumer("servicio.tareas.crear", message -> {
             JsonObject body = (JsonObject) message.body(); // parseamos el mensaje
             System.out.println("Solicitando tarea: " + body);

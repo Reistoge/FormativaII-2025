@@ -50,7 +50,7 @@ public class ServicioTareasTest {
 
     @Test
     public void testCrearTarea() {
-         Tarea t = servicioTarea.crearTarea("TareaDePrueba", "Descripción", LocalDate.now().plusDays(1));
+        Tarea t = servicioTarea.crearTarea("TareaDePrueba", "Descripción", LocalDate.now().plusDays(1));
         Assert.assertNotNull(t);
         boolean result = servicioTarea.obtenerTareasPendientes().contains(t);
         assertTrue(result);
@@ -103,39 +103,7 @@ public class ServicioTareasTest {
         }
     }
 
-//    @Test
-//    public void testCrearTareaMock(){
-//        // Verifica que se llama al metodo guardar() del repositorio
-//
-//        ServicioTarea servicio;
-//
-//        Tarea tareaPorCompletarMock = Mockito.mock(Tarea.class);
-//        when(tareaPorCompletarMock.getId()).thenReturn(1L);
-//        when(tareaPorCompletarMock.getTitulo()).thenReturn("Tarea por completar Mock");
-//        when(tareaPorCompletarMock.getDescripcion()).thenReturn("Descripción 1 Mock");
-//        when(tareaPorCompletarMock.getFechaFinalizacion()).thenReturn(LocalDate.now().plusDays(1));
-//        when(tareaPorCompletarMock.isCompletada()).thenReturn(false);
-//
-//        RepositorioTarea repositorio = Mockito.mock(RepositorioTarea.class);
-//
-//        when(repositorio.guardar(Mockito.any(Tarea.class))).thenReturn(tareaPorCompletarMock);
-//        when(repositorio.encontrarCompletas(false)).thenReturn(List.of());
-//        when(repositorio.encontrarTodas()).thenReturn(List.of(tareaPorCompletarMock));
-//
-//        servicio = new ServicioTarea(repositorio);
-//        servicio.crearTarea(tareaPorCompletarMock.getTitulo(),tareaPorCompletarMock.getDescripcion(),
-//                tareaPorCompletarMock.getFechaFinalizacion());
-//
-//        // verificamos que se llama una unica vez el metodo guardar
-//        verify(repositorio, times(1)).guardar(Mockito.any(Tarea.class));
-//        verify(repositorio.guardar(tareaPorCompletarMock));
-//        verify(servicio.crearTarea(tareaPorCompletarMock.getTitulo(),
-//                tareaPorCompletarMock.getDescripcion(), tareaPorCompletarMock.getFechaFinalizacion()));
-//
-//
-//
-//
-//    }
+
     @Test
     public void testCrearTareaMock() {
 
@@ -149,32 +117,7 @@ public class ServicioTareasTest {
 
 
     }
-//    @Test
-//    public void testMarcarTareaCompletadaMock() {
-//
-//        // creamos un mock de tarea pertencente a la base de datos
-//        Tarea tareaMock = Mockito.mock(Tarea.class);
-//        when(tareaMock.getId()).thenReturn(1L);
-//        when(tareaMock.getTitulo()).thenReturn("Tarea Mock");
-//        when(tareaMock.getDescripcion()).thenReturn("Descripción Mock");
-//        when(tareaMock.getFechaFinalizacion()).thenReturn(LocalDate.now().plusDays(1));
-//        when(tareaMock.isCompletada()).thenReturn(false);
-//
-//        // simulamos la dependencia del repositorio
-//        RepositorioTarea repositorioMock = Mockito.mock(RepositorioTarea.class);
-//        // cuando llama a la base de datos simulamos una tarea existente en este caso el tareaMock
-//        when(repositorioMock.encontrarTodas()).thenReturn(List.of(tareaMock));
-//
-//
-//        ServicioTarea servicio = new ServicioTarea(repositorioMock);
-//        servicio.marcarCompletada(tareaMock.getId());
-//        // verificamos que cuando se marca la tarea como completada, se llama al metodo guardar del repositorio.
-//        verify(repositorioMock, times(1)).guardar(Mockito.any(Tarea.class));
-//
-//
-//
-//
-//    }
+ 
     @Test
     public void testMarcarTareaCompletadaMock() {
 
