@@ -2,6 +2,10 @@ import cl.ucn.dominio.Tarea;
 import cl.ucn.repositorio.RepositorioTarea;
 import cl.ucn.repositorio.RepositorioTareaImpl;
 import cl.ucn.servicio.ServicioTarea;
+import com.tngtech.archunit.core.domain.JavaClasses;
+import com.tngtech.archunit.core.importer.ClassFileImporter;
+import com.tngtech.archunit.junit.AnalyzeClasses;
+import com.tngtech.archunit.lang.ArchRule;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -20,6 +24,8 @@ public class ServicioTareasTest {
     EntityManager em;
     ServicioTarea servicioTarea;
     RepositorioTarea repositorioTarea;
+
+
     @BeforeClass
     public static void setupClass() {
         // Aquí podrías configurar algo que se ejecute una vez antes de todos los tests
@@ -57,6 +63,16 @@ public class ServicioTareasTest {
 
 
     }
+//    @Test
+//    public void archRule(){
+//        JavaClasses javaClasses = new ClassFileImporter().importPackages("cl.ucn");
+//        ArchRule rule = com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes()
+//                .that().resideInAPackage("cl.ucn.servicio..")
+//                .should().onlyBeAccessed().byAnyPackage("cl.ucn.servicio..", "cl.ucn.repositorio..");
+//
+//        rule.check(javaClasses);
+//
+//    }
     @Test
     public void testCrearTareaFechaVacia(){
         Tarea t = servicioTarea.crearTarea("TareaSinFecha", "Descripción", null);
@@ -110,6 +126,7 @@ public class ServicioTareasTest {
         RepositorioTarea repositorioMock = Mockito.mock(RepositorioTarea.class);
         // method returns null (which is Mockito's default behavior if you don't stub it).
         // so repositorio.guardar() will return null.
+
         ServicioTarea servicio = new ServicioTarea(repositorioMock);
 
         Tarea t = servicio.crearTarea("Titulo", "Descripcion", LocalDate.now().plusDays(1));
@@ -117,7 +134,7 @@ public class ServicioTareasTest {
 
 
     }
- 
+
     @Test
     public void testMarcarTareaCompletadaMock() {
 

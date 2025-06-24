@@ -17,8 +17,13 @@ public class MainAppVerticle     {
         System.out.println("Iniciando la aplicación Vert.x...");
         Vertx vertx = Vertx.vertx();
         vertx.deployVerticle(new RepositorioTareasVerticle());
-        vertx.deployVerticle(new ClienteVerticle());
         vertx.deployVerticle(new ServicioTareasVerticle());
+
+        vertx.deployVerticle(new ClienteVerticle());
+        vertx.deployVerticle(new ClienteVerticle());
+        vertx.deployVerticle(new ClienteVerticle());
+        vertx.deployVerticle(new ClienteVerticle());
+        vertx.deployVerticle(new ClienteVerticle());
     }
 
 
