@@ -63,16 +63,6 @@ public class ServicioTareasTest {
 
 
     }
-//    @Test
-//    public void archRule(){
-//        JavaClasses javaClasses = new ClassFileImporter().importPackages("cl.ucn");
-//        ArchRule rule = com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes()
-//                .that().resideInAPackage("cl.ucn.servicio..")
-//                .should().onlyBeAccessed().byAnyPackage("cl.ucn.servicio..", "cl.ucn.repositorio..");
-//
-//        rule.check(javaClasses);
-//
-//    }
     @Test
     public void testCrearTareaFechaVacia(){
         Tarea t = servicioTarea.crearTarea("TareaSinFecha", "Descripción", null);
